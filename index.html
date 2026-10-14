@@ -4,143 +4,238 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Sleeker</title>
+    <meta name="description" content="Privacy policy for Sleeker, the Android app for searching and downloading torrents.">
+    <link rel="icon" type="image/png" href="sleeker-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary: #1A45BF;
+            --accent: #0E9F8C;
+            --accent-soft: #D8F4EE;
+            --bg: #F3F6FB;
+            --surface: #FFFFFF;
+            --surface-2: #E9EFF8;
+            --text: #0B1A33;
+            --text-2: #52617C;
+            --border: #DCE4F1;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #6A93FF;
+                --accent: #3DDBC3;
+                --accent-soft: #0C3A35;
+                --bg: #08101F;
+                --surface: #131E36;
+                --surface-2: #192640;
+                --text: #E8EEFA;
+                --text-2: #96A5C4;
+                --border: #22314D;
+            }
+        }
+        * { box-sizing: border-box; }
         body {
             font-family: 'Roboto', Arial, sans-serif;
-            background-color: #f8f9fa;
-            color: #343a40;
+            background: var(--bg);
+            color: var(--text);
             margin: 0;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
+            padding: 24px 16px 48px;
+            line-height: 1.7;
         }
         #container {
-            width: 100%;
-            max-width: 800px;
-            background-color: #ffffff;
-            border: 1px solid #dee2e6;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            max-width: 820px;
+            margin: 0 auto;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
             padding: 40px;
-            box-sizing: border-box;
         }
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-            border-bottom: 1px solid #e9ecef;
-            padding-bottom: 20px;
+        .header { text-align: center; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
+        .logo { width: 96px; height: 96px; border-radius: 22px; }
+        .brand { font-size: 1rem; font-weight: 700; color: var(--primary); margin: 8px 0 0; letter-spacing: 0.04em; }
+        h1 { font-size: 2.1rem; margin: 4px 0 8px; }
+        .meta { color: var(--text-2); font-size: 0.95rem; margin: 0; }
+        .summary {
+            background: var(--accent-soft);
+            border-radius: 16px;
+            padding: 20px 24px;
+            margin: 28px 0 8px;
         }
-        .logo {
-            width: 100px; /* Adjusted logo size */
-            height: auto;
-            margin-bottom: 15px;
-        }
-        h1 {
-            color: #212529;
-            font-size: 2.25rem;
-            margin: 0;
-        }
+        .summary h2 { border: 0; margin: 0 0 8px; padding: 0; font-size: 1.15rem; color: var(--text); }
+        .summary ul { margin: 0; }
         h2 {
-            color: #007bff; /* A highlight color for section heads */
-            font-size: 1.5rem;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 10px;
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin: 40px 0 14px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
         }
-        p, li {
-            color: #495057;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 10px;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        strong {
-            color: #212529;
-            font-weight: 500;
-        }
-        .footer-note {
-            text-align: right;
-            margin-top: 40px;
-            font-style: italic;
-            color: #6c757d;
+        h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+        p, li { color: var(--text-2); font-size: 1rem; }
+        strong { color: var(--text); font-weight: 500; }
+        ul { padding-left: 22px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--primary); }
+        .toc { columns: 2; column-gap: 32px; padding-left: 20px; margin: 8px 0 0; }
+        .toc li { margin-bottom: 4px; }
+        .table-wrap { overflow-x: auto; margin: 12px 0; }
+        table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+        th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--border); color: var(--text-2); }
+        th { color: var(--text); background: var(--surface-2); font-weight: 500; }
+        .note { background: var(--surface-2); border-radius: 12px; padding: 14px 18px; }
+        .footer-note { text-align: right; margin-top: 40px; font-style: italic; color: var(--text-2); }
+        @media (max-width: 600px) {
+            #container { padding: 24px 18px; border-radius: 16px; }
+            h1 { font-size: 1.7rem; }
+            .toc { columns: 1; }
         }
     </style>
 </head>
 <body>
-    <div id="container">
-        <div class="header">
-            <img src="download.svg" alt="App Logo" class="logo">
-            <h1>Privacy Policy</h1>
-        </div>
-
-        <p><strong>Sleeker Cartoons</strong> built the <strong>Sleeker - Torrent Search Engine</strong> app (the "Service"). This Service is provided by <strong>Sleeker Cartoons</strong> and is intended for use as is.</p>
-        <p>This page informs you of our policies regarding the collection, use, and disclosure of information when you use our Service.</p>
-        <p>By using the Service, you agree to the collection and use of information in accordance with this policy. The information we collect is used solely for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.</p>
-        
-        <h2>Information Collection and Use</h2>
-        <p>To provide a better, more reliable experience, we collect certain types of information. This data is essential for functional and analytical purposes to improve app performance and stability.</p>
-        
-        <p>The information we collect includes:</p>
-        <ul>
-            <li><strong>Anonymous User ID:</strong> We assign an anonymous, random identifier to your app installation. This ID is not linked to your personal identity. <strong>Benefit:</strong> It helps us diagnose and fix app crashes and technical issues. If your app encounters an error, this ID allows us to identify the problem log and improve app stability for everyone.</li>
-            <li><strong>Approximate Location Data:</strong> We collect approximate location information. <strong>Benefit:</strong> This helps us understand app performance across different geographical areas.</li>
-            <li><strong>In-app Search History:</strong> We temporarily save your search queries for caching. <strong>Benefit:</strong> This helps us cache results to provide you with faster and more relevant search results on subsequent queries.</li>
-            <li><strong>Device and Log Information:</strong> In case of an app error, we collect log data through third-party services. This may include your device’s IP address, device name, operating system version, app configuration, the time and date of your use of the Service, and other statistics to help us resolve issues.</li>
-        </ul>
-        
-        <p>The app also uses third-party services that may collect information used to identify you. Please review their policies:</p>
-        <ul>
-            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play Services</a></li>
-            </ul>
-        
-        <h2>Data Retention and Deletion</h2>
-        <p>We are committed to data minimization. All operational data we collect (including your Anonymous User ID, Generalized Location Data, and In-app Search History) is <strong>automatically and permanently deleted from our systems after 90 days.</strong> We only retain this data for the short period needed to improve the app and ensure its stability.</p>
-
-        <h2>Cookies</h2>
-        <p>Cookies are files with a small amount of data used as anonymous unique identifiers. This Service does not use "cookies" explicitly. However, the app may use third-party code that uses "cookies" to collect information. You may have the option to accept or refuse these cookies through your device settings.</p>
-        
-        <h2>Service Providers</h2>
-        <p>We may employ third-party companies for the following reasons:</p>
-        <ul>
-            <li>To facilitate our Service;</li>
-            <li>To provide the Service on our behalf;</li>
-            <li>To perform Service-related services; or</li>
-            <li>To assist us in analyzing how our Service is used.</li>
-        </ul>
-        
-        <h2>Security</h2>
-        <p>We value your trust and strive to use commercially acceptable means of protecting your information. However, no method of transmission over the internet or electronic storage is 100% secure, and we cannot guarantee its absolute security.</p>
-        
-        <h2>Links to Other Sites</h2>
-        <p>This Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. We strongly advise you to review the Privacy Policy of these websites, as we have no control over their content or practices.</p>
-        
-        <h2>Children’s Privacy</h2>
-        <p>Our Services do not address anyone under the age of 13. We do not knowingly collect personally identifiable information from children under 13. If we discover that a child under 13 has provided us with personal information, we will immediately delete it from our servers. If you are a parent or guardian and are aware that your child has provided us with information, please contact us.</p>
-        
-        <h2>Changes to This Privacy Policy</h2>
-        <p>We may update our Privacy Policy from time to time. We advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately.</p>
-        
-        <h2>Contact Us</h2>
-        <p>If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at: <strong>info.sleekercartoons@gmail.com</strong></p>
-        
-        <p class="footer-note"><em>Last updated: October 16, 2025</em></p>
+<div id="container">
+    <div class="header">
+        <img src="sleeker-logo.png" alt="Sleeker app icon" class="logo">
+        <p class="brand">SLEEKER</p>
+        <h1>Privacy Policy</h1>
+        <p class="meta">Effective October 14, 2026 &middot; Applies to Sleeker 3.0.0 and later</p>
     </div>
+
+    <div class="summary">
+        <h2>At a glance</h2>
+        <ul>
+            <li>Your search history, bookmarks and downloads stay <strong>on your device</strong>.</li>
+            <li>Your search terms go only to the public search sites that answer them, never to our servers or analytics.</li>
+            <li>Diagnostics and crash reports are <strong>off by default</strong> and only turn on if you choose.</li>
+            <li>Ads follow your consent choices, and you can remove them at any time.</li>
+            <li>You can delete your data in the app at any time.</li>
+        </ul>
+    </div>
+
+    <h2>Contents</h2>
+    <ol class="toc">
+        <li><a href="#who">Who we are</a></li>
+        <li><a href="#device">Information kept on your device</a></li>
+        <li><a href="#search">Search and the BitTorrent network</a></li>
+        <li><a href="#background">Background downloads and permissions</a></li>
+        <li><a href="#diagnostics">Optional diagnostics</a></li>
+        <li><a href="#crash">Optional crash reports</a></li>
+        <li><a href="#ads">Advertising and your consent</a></li>
+        <li><a href="#purchases">Purchases and app updates</a></li>
+        <li><a href="#services">Third-party services</a></li>
+        <li><a href="#retention">Keeping and deleting data</a></li>
+        <li><a href="#backup">Android backups</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#children">Children's privacy</a></li>
+        <li><a href="#changes">Changes and contact</a></li>
+    </ol>
+
+    <h2 id="who">1. Who we are</h2>
+    <p><strong>Sleeker</strong> (the "App") is an Android app for searching and downloading torrents, published by <strong>Sleeker Cartoons</strong> ("we", "us"). This policy explains what information the App handles, why, and the choices you have. We follow three principles: keep data on your device, collect nothing optional without your consent, and give you simple ways to delete your data.</p>
+
+    <h2 id="device">2. Information kept on your device</h2>
+    <p>The App stores the following only in its private storage on your device. It is not sent to us.</p>
+    <ul>
+        <li><strong>Search history:</strong> the searches you run, so the App can suggest recent searches.</li>
+        <li><strong>Saved bookmarks:</strong> magnet links and titles you choose to save.</li>
+        <li><strong>Downloads:</strong> the files you download, plus their file lists and progress, kept in the App's private storage.</li>
+        <li><strong>Settings:</strong> your choices, such as Wi-Fi-only downloads, mobile-data rules and privacy settings.</li>
+    </ul>
+
+    <h2 id="search">3. Search and the BitTorrent network</h2>
+    <h3>Searching</h3>
+    <p>When you search, the App sends your search terms over an encrypted connection (HTTPS) directly to the public torrent search sites that answer the search. Those sites receive the search terms and your IP address, as any website does, and handle them under their own terms. We never receive your searches, and we never send them to analytics.</p>
+    <h3>Downloading (peer-to-peer)</h3>
+    <p>Sleeker uses the BitTorrent protocol. When you download a torrent:</p>
+    <ul>
+        <li>Your device connects directly to other people's devices ("peers") and to trackers. This does not pass through our servers.</li>
+        <li>As with every BitTorrent app, <strong>your public IP address and port are visible to the other peers and trackers</strong> for that torrent.</li>
+        <li>While a file is downloading, your device also <strong>uploads</strong> parts of it to other peers; this is how BitTorrent works. Sleeker stops all transfer for a torrent when its download reaches 100%.</li>
+    </ul>
+    <p>Only download content you have the right to download.</p>
+
+    <h2 id="background">4. Background downloads, notifications and permissions</h2>
+    <p>So that large files can finish without keeping the screen on, downloads continue while the App is in the background. To do this, the App uses an Android <strong>foreground service</strong> (on newer Android versions, a user-started data-transfer job), which always shows a visible notification with the download's progress. You can pause or stop downloads from that notification. Running in the background does not collect any extra information.</p>
+    <p>The App asks for or uses these permissions:</p>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Permission</th><th>Why</th></tr>
+            <tr><td>Internet and network state</td><td>To search, to download, and to follow your Wi-Fi-only and mobile-data rules.</td></tr>
+            <tr><td>Notifications (optional)</td><td>To show download progress and tell you when a download finishes or fails. Downloads still work if you decline.</td></tr>
+            <tr><td>Foreground service (data sync) and user-initiated jobs</td><td>To keep downloads you started running while the App is in the background.</td></tr>
+            <tr><td>Google Play billing</td><td>To process Remove Ads purchases and subscriptions.</td></tr>
+            <tr><td>Advertising ID</td><td>Used by the Google Mobile Ads SDK only to show ads, according to your consent choices (see section 7).</td></tr>
+        </table>
+    </div>
+    <p>Downloaded files are stored in the App's private storage. They are deleted when you uninstall the App, unless you first export them to shared storage.</p>
+
+    <h2 id="diagnostics">5. Optional diagnostics</h2>
+    <p>Diagnostics are <strong>off by default</strong>. Only if you turn on <strong>Diagnostics &amp; telemetry</strong> in Settings does the App send limited technical events to Google Firebase Analytics:</p>
+    <ul>
+        <li><strong>Events:</strong> app and screen use (such as app open and screen view), search and download outcomes, and app-health events (search completed, metadata fetched, download finished, transfers restored or stopped).</li>
+        <li><strong>Details:</strong> fixed labels and rough ranges only, such as app version, screen name, "1–3 seconds" or "6–20 results", and technical error codes such as "storage full".</li>
+        <li><strong>Never included:</strong> search terms, magnet links, torrent hashes, tracker addresses, file names or file paths. The App blocks these before anything is sent.</li>
+        <li><strong>Standard Firebase data:</strong> while diagnostics are on, the Firebase SDK also records standard events (such as session start) and device details (such as device model, Android version, app version and an approximate region that Google derives from the IP address).</li>
+    </ul>
+    <p>You can turn diagnostics off at any time in Settings; collection stops immediately.</p>
+
+    <h2 id="crash">6. Optional crash reports</h2>
+    <p>Crash reports are <strong>off by default</strong> and separate from diagnostics. If you turn on <strong>Share crash reports</strong> in Settings, the App sends crash reports through Google Firebase Crashlytics, including crashes in native code. A report contains technical details only: where in the code the crash happened, device model, Android version, app version, processor type and a Crashlytics installation identifier. It never includes your searches, torrent names, magnet links, file names or files. Reports saved before you turned the setting on are deleted, and turning it off stops reporting and deletes reports not yet sent.</p>
+
+    <h2 id="ads">7. Advertising and your consent</h2>
+    <p>The free version of the App shows ads from the <strong>Google Mobile Ads SDK</strong> (AdMob): banners, ads among search results, full-screen ads at natural breaks, and optional rewarded ads that you can choose to watch for a period without ads.</p>
+    <ul>
+        <li>Where the law requires it (for example in the EEA, the UK and Switzerland), the App asks for your consent through <strong>Google's consent tool</strong> before any ad is requested. Ads are personalized or non-personalized based on your choice.</li>
+        <li>You can change your choice at any time in <strong>Settings &rarr; Privacy choices</strong> (shown where it applies).</li>
+        <li>The ads SDK may use your device's advertising ID and other device signals as described in <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">Google's advertising policy</a>. You can reset or delete your advertising ID in your Android settings.</li>
+        <li>If you buy Remove Ads, or while a rewarded ad-free period is active, no ads are shown.</li>
+    </ul>
+
+    <h2 id="purchases">8. Purchases and app updates</h2>
+    <p>Remove Ads purchases and subscriptions are processed entirely by <strong>Google Play</strong>. We receive only the purchase confirmation needed to turn off ads; we never see your payment details. Subscriptions can be managed or cancelled in the Play Store.</p>
+    <p>The App uses <strong>Google Play in-app updates</strong> to check for and install newer versions through Google Play.</p>
+
+    <h2 id="services">9. Third-party services</h2>
+    <div class="table-wrap">
+        <table>
+            <tr><th>Service</th><th>Purpose</th><th>Information</th></tr>
+            <tr><td>Google Firebase Analytics</td><td>Optional diagnostics</td><td>Only when you turn diagnostics on (section 5)</td></tr>
+            <tr><td>Google Firebase Crashlytics</td><td>Optional crash reports</td><td>Only when you turn crash reports on (section 6)</td></tr>
+            <tr><td>Google Firebase Remote Config</td><td>Turning features and search sources on or off remotely</td><td>Basic device and app details (such as app version and Android version)</td></tr>
+            <tr><td>Google Firebase Authentication (anonymous)</td><td>An anonymous app session</td><td>A random anonymous user ID, not linked to your identity</td></tr>
+            <tr><td>Google Mobile Ads SDK and consent tool</td><td>Ads and ad consent</td><td>Device and advertising signals, according to your consent (section 7)</td></tr>
+            <tr><td>Google Play Billing and in-app updates</td><td>Purchases and app updates</td><td>Purchase confirmation; update availability</td></tr>
+            <tr><td>Public torrent search sites</td><td>Answering your searches</td><td>Your search terms and IP address, sent directly by the App (section 3)</td></tr>
+        </table>
+    </div>
+    <p>Google's handling of data is described in the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>. The App does not look up your location from your IP address; it uses your device's language and SIM region only.</p>
+
+    <h2 id="retention">10. Keeping and deleting data</h2>
+    <p>Data on your device stays until you delete it or uninstall the App. There is no automatic deletion timer. (An earlier version of this policy mentioned 90-day automatic deletion; that no longer applies.)</p>
+    <ul>
+        <li><strong>Search history:</strong> Settings &rarr; Clear search history.</li>
+        <li><strong>Saved bookmarks:</strong> Settings &rarr; Clear saved bookmarks.</li>
+        <li><strong>Downloaded files:</strong> delete them from the Downloads or Library screens.</li>
+        <li><strong>Everything:</strong> uninstalling the App removes all its private data and files.</li>
+    </ul>
+    <div class="note">
+        <p><strong>Data from earlier versions.</strong> Versions of Sleeker before 3.0.0 sent an anonymous installation ID and search logs to our Google Cloud Firestore database. Sleeker 3.0.0 no longer sends any of this, and we are deleting the records stored from earlier versions. If you still use an older version, please update to stop it from being sent.</p>
+    </div>
+
+    <h2 id="backup">11. Android backups</h2>
+    <p>If Android backup is turned on for your device, Android may include the App's local database (your search history and saved bookmarks) in your personal Google backup, as it does for other apps. Your diagnostics and crash-report choices are <strong>not</strong> backed up: after restoring on a new device, both start turned off.</p>
+
+    <h2 id="security">12. Security</h2>
+    <p>Searches and our services use encrypted connections (HTTPS). Data on your device is kept in the App's private storage, which other apps cannot read. No method of storage or transmission is completely secure, but we keep what we handle to a minimum.</p>
+
+    <h2 id="children">13. Children's privacy</h2>
+    <p>The App is not directed to children under 13 (or the age of digital consent where you live). We do not knowingly collect personal information from children. If you believe a child has provided personal information, please contact us and we will take appropriate steps.</p>
+
+    <h2 id="changes">14. Changes and contact</h2>
+    <p>We may update this policy when the App or the law changes. The effective date at the top shows the latest version.</p>
+    <p>Questions or requests about your privacy: <a href="mailto:info.sleekercartoons@gmail.com">info.sleekercartoons@gmail.com</a> (Sleeker Cartoons).</p>
+
+    <p class="footer-note">Last updated: October 14, 2026</p>
+</div>
 </body>
 </html>
